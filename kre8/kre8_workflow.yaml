@@ -1,0 +1,8 @@
+name: kre8_workflow
+agent_class: SequentialAgent
+description: Orchestrates the content creation workflow.
+sub_agents:
+  - config_path: ./topic_analyzer_agent.yaml
+  - config_path: ./news_agent.yaml
+  - config_path: ./youtube_trend_analyst.yaml
+  - config_path: ./prompt_formatter_agent.yaml

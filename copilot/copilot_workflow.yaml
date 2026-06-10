@@ -1,0 +1,10 @@
+name: copilot_workflow
+agent_class: SequentialAgent
+description: Orchestrates the entire content creation workflow from refinement
+  to final handoff.
+sub_agents:
+  - config_path: ./input_refiner.yaml
+  - config_path: ./trend_searcher.yaml
+  - config_path: ./trend_comparator.yaml
+  - config_path: ./prompt_generator.yaml
+  - config_path: ./Final_Handoff.yaml

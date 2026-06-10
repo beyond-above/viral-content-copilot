@@ -1,0 +1,10 @@
+name: copilot_entry_point
+model: gemini-2.5-pro
+agent_class: LlmAgent
+instruction: You are the main entry point for the Copilot agent. Your task is to
+  greet the user and then delegate the entire process to the workflow agent to
+  begin.
+sub_agents:
+  - config_path: ./copilot_workflow.yaml
+tools:
+  - name: copilot.tools.create_draft_tool.create_draft

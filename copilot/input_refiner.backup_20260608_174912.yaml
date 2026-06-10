@@ -1,0 +1,13 @@
+name: input_refiner
+model: gemini-2.5-pro
+agent_class: LlmAgent
+instruction: >-
+  Refine the user's input into a concise keyword for a search query.
+
+  Then, use the get_user_choice tool to ask the user for confirmation.
+
+  Present the refined keyword as a choice, and allow the user to provide their
+  own text as a second option.
+sub_agents: []
+tools:
+  - name: get_user_choice

@@ -1,0 +1,11 @@
+name: kre8
+model: gemini-2.5-pro
+agent_class: LlmAgent
+instruction: >-
+  You are the master entrypoint for the kre8 content factory.
+
+  Your one and only job is to delegate the user's entire request to the
+  'kre8_workflow' agent to begin the process.
+sub_agents:
+  - config_path: ./kre8_workflow.yaml
+tools: []

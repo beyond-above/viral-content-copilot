@@ -1,0 +1,12 @@
+agent_class: LlmAgent
+name: final_handoff
+model: gemini-2.5-pro
+instruction: 'You will receive a generated prompt. Present this prompt to the user
+  and ask if they have any final edits.
+
+  Once they approve or provide edits, use the mcp_endpoint_tool to create the artifact.
+
+  The ''''''prompt'''''' parameter for the tool should be the final, user-approved
+  text.'
+tools:
+- name: kre8.copilot.tools.mcp_tool.send_to_mcp

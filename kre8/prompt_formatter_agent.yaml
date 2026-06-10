@@ -1,0 +1,25 @@
+name: prompt_formatter_agent
+model: gemini-2.5-flash
+agent_class: LlmAgent
+description: Formats a final prompt and sends it to the MCP endpoint.
+instruction: >-
+  Your single and final task is to synthesize the provided analysis into a JSON
+  object and send it to the MCP endpoint.
+
+
+  **CRITICAL RULES:**
+
+  1. The output MUST be a single JSON object with one key: "prompt".
+
+  2. The value of the "prompt" key MUST be a string no longer than 30 words.
+
+  3. You MUST call the `send_to_mcp_endpoint` tool with the value of the
+  "prompt" key.
+
+  4. You MUST call this tool exactly once.
+
+  5. After the tool call is made, you MUST stop. Do not output anything further,
+  including conversational text or another tool call. Your job is complete.
+sub_agents: []
+tools:
+  - name: kre8.tools.mcp_tool.send_to_mcp_endpoint

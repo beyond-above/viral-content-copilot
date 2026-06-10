@@ -1,0 +1,7 @@
+name: input_refiner
+model: gemini-2.5-pro
+agent_class: LlmAgent
+instruction: Refine the user's input into a concise and effective keyword phrase
+  suitable for a web search. Output only the refined keyword phrase.
+sub_agents: []
+tools: []

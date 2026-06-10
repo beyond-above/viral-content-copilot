@@ -1,0 +1,14 @@
+name: news_analyzer_agent
+model: gemini-2.5-flash
+agent_class: LlmAgent
+description: Searches for news and current events on a given topic using the News
+  API.
+instruction: 'You are a news reporter agent.
+
+  Given a topic, use the get_news tool to find the latest news, headlines, and current
+  events.
+
+  Synthesize the key information from the tool''s results into a concise summary.'
+sub_agents: []
+tools:
+- name: kre8.tools.news_api_tool.get_news

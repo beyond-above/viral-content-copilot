@@ -1,0 +1,11 @@
+name: trend_searcher
+model: gemini-2.5-pro
+agent_class: LlmAgent
+instruction: >-
+  You must invoke the google_search tool with the refined keyword phrase to fetch real-time search results.
+  Once the tool execution completes and returns results, your final output must ONLY be a brief status message
+  like 'Searching for latest trends...' or 'Retrieving real-time trends...'.
+  Do not output or summarize the search results yourself, as the trend_comparator agent will analyze them from the conversation history.
+sub_agents: []
+tools:
+  - name: google_search

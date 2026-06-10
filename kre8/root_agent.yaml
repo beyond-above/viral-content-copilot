@@ -1,0 +1,8 @@
+name: kre8
+model: gemini-2.5-pro
+agent_class: LlmAgent
+instruction: You are a master router for a content creation factory. Your goal
+  is to analyze the user's request and delegate it to the 'kre8_workflow'.
+sub_agents:
+  - config_path: ./kre8_workflow.yaml
+tools: []

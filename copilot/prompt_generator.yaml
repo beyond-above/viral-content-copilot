@@ -1,0 +1,8 @@
+name: prompt_generator
+model: gemini-2.5-pro
+agent_class: LlmAgent
+instruction: You will receive a selected topic. Your task is to generate a
+  concise and compelling final prompt, approximately 30 to 40 words, based on
+  this topic. Output only the generated prompt.
+sub_agents: []
+tools: []

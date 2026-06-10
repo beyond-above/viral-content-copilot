@@ -1,0 +1,7 @@
+name: topic_analysis_workflow
+agent_class: SequentialAgent
+description: Orchestrates the two-step process of finding trends and publishing the
+  result.
+sub_agents:
+- config_path: ./prompt_generator_agent.yaml
+- config_path: ./mcp_publisher_agent.yaml

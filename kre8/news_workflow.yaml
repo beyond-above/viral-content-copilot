@@ -1,0 +1,6 @@
+name: news_workflow
+agent_class: SequentialAgent
+description: A workflow for processing news and creating a formatted prompt.
+sub_agents:
+  - config_path: ./news_agent.yaml
+  - config_path: ./undefined.yaml

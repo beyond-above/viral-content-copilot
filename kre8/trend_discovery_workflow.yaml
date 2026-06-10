@@ -1,0 +1,6 @@
+name: trend_discovery_workflow
+agent_class: SequentialAgent
+description: A workflow for discovering, analyzing, and formatting YouTube trends.
+sub_agents:
+  - config_path: ./undefined.yaml
+  - config_path: ./topic_analyzer_agent.yaml
