@@ -27,7 +27,6 @@ const App: React.FC = () => {
 
   const pollingIntervalRef = useRef<any | null>(null);
 
-  // Clear polling interval on unmount
   useEffect(() => {
     return () => {
       if (pollingIntervalRef.current) {
@@ -35,6 +34,15 @@ const App: React.FC = () => {
       }
     };
   }, []);
+
+  const parseErrorString = (err: any): string => {
+    if (!err) return '';
+    if (typeof err === 'string') return err;
+    if (typeof err === 'object') {
+      return err.message || err.code || JSON.stringify(err);
+    }
+    return String(err);
+  };
 
   // Poll video status every 3.5 seconds
   const startPolling = (targetJobId: string) => {
@@ -48,7 +56,7 @@ const App: React.FC = () => {
         const data = response.data;
 
         if (data.error) {
-          setError(data.error);
+          setError(parseErrorString(data.error));
           setStatus('failed');
           setStepMessage(data.message || 'Status check failed');
           if (pollingIntervalRef.current) clearInterval(pollingIntervalRef.current);
@@ -69,7 +77,7 @@ const App: React.FC = () => {
           setEditList(data.edit_list || null);
           if (pollingIntervalRef.current) clearInterval(pollingIntervalRef.current);
         } else if (currentStatus === 'failed') {
-          setError(data.error || 'Pipeline aborted');
+          setError(parseErrorString(data.error) || 'Pipeline aborted');
           setStepMessage(data.step_message || 'Job failed');
           if (pollingIntervalRef.current) clearInterval(pollingIntervalRef.current);
         } else if (currentStatus === 'cancelled') {
@@ -107,7 +115,7 @@ const App: React.FC = () => {
       const data = response.data;
 
       if (data.error) {
-        setError(data.error);
+        setError(parseErrorString(data.error));
         setStatus('failed');
         setStepMessage(data.message || 'Could not initiate generation job');
         return;
@@ -123,7 +131,7 @@ const App: React.FC = () => {
       }
     } catch (err: any) {
       console.error('Error starting video project:', err);
-      setError(err.message || 'API request failed');
+      setError(parseErrorString(err));
       setStatus('failed');
     }
   };

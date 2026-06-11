@@ -805,16 +805,18 @@ const VideoPreview: React.FC<VideoPreviewProps> = ({
                   </p>
                 </div>
               ) : error === 'image_safety_filtered' || (error && error.includes('safety_filtered')) ? (
-                <div className="bg-amber-50 border border-amber-200 p-4 rounded-xl mt-3 text-left">
+                <div className="bg-amber-50 border border-amber-200 p-4 rounded-xl mt-3 text-left animate-fade-in">
                   <p className="text-[11px] font-bold text-amber-800 flex items-center gap-1.5">
                     <AlertTriangle size={14} className="text-amber-600" />
                     Google Safety Filter Blocked Image
                   </p>
                   <p className="text-[10px] text-amber-700 mt-1 leading-relaxed">
-                    Google's safety filters blocked one or more generated scene prompts. This usually happens when topics combine minors (like "students") with appearance or school uniforms. 
+                    {error === 'image_safety_filtered_all' 
+                      ? "Google's content safety filters blocked every single generated scene prompt for this topic. Since no scenes could be visualized without triggering the safety filters, video generation had to be aborted."
+                      : "Google's safety filters blocked one or more generated scene prompts. This usually happens when topics combine sensitive combinations of terms, or reference minors (like \"students\") with uniform/clothing, or portray job losses."}
                   </p>
                   <p className="text-[10px] text-amber-800 mt-2 font-semibold">
-                    💡 Tip: Try rephrasing the topic to use terms like "young adults", "creatives", or "professionals" instead of "students".
+                    💡 Tip: Try rephrasing the topic to use terms like "young adults", "creatives", or "professionals" instead of "students" or "artists losing jobs".
                   </p>
                 </div>
               ) : (
