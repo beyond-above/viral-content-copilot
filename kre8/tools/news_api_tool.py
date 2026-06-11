@@ -12,8 +12,9 @@ def get_news(topic: str) -> dict:
         A dictionary containing the top headlines for the topic,
         or an error message if the API call fails.
     """
-    # API key has been hardcoded as requested for testing.
-    api_key = "58f5cedca80d4afbad8c7be0db34cd39"
+    api_key = os.environ.get("NEWS_API_KEY")
+    if not api_key:
+        return {"error": "API key not configured. Please set the NEWS_API_KEY environment variable."}
 
     url = f"https://newsapi.org/v2/everything?q={topic}&apiKey={api_key}&pageSize=5"
 
