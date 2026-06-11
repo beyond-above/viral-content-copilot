@@ -200,7 +200,7 @@ const App: React.FC = () => {
           </div>
           <div>
             <h1 className="text-2xl font-black tracking-tight text-gray-900 leading-none">
-              VIRAL <span className="text-indigo-600">COPILOT</span>
+              KRE8 <span className="text-indigo-600">COPILOT</span>
             </h1>
             <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-1">
               Content Engine v1.0
@@ -213,10 +213,16 @@ const App: React.FC = () => {
             <TrendingUp size={16} className="text-green-500" />
             <span className="text-xs font-semibold text-gray-600">Trending Now</span>
           </div>
-          <button className="flex items-center gap-2 px-5 py-2.5 bg-gray-900 text-white rounded-xl hover:bg-gray-800 transition-all text-sm font-medium shadow-lg shadow-gray-200">
-            <Sparkles size={16} />
-            Upgrade Pro
-          </button>
+          <div className="flex flex-col items-center">
+            <button 
+              disabled 
+              className="flex items-center gap-2 px-5 py-2.5 bg-gray-300 text-gray-500 rounded-xl text-sm font-semibold shadow-inner cursor-not-allowed border border-gray-200/50 opacity-80"
+            >
+              <Sparkles size={16} className="text-gray-400" />
+              Upgrade Pro
+            </button>
+            <span className="text-[9px] text-gray-400 font-bold mt-1 uppercase tracking-wider">coming soon</span>
+          </div>
         </div>
       </header>
 
@@ -252,7 +258,7 @@ const App: React.FC = () => {
       {/* Footer */}
       <footer className="py-6 px-8 border-t border-gray-100 bg-white/50 backdrop-blur-md flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="text-xs text-gray-400 font-medium">
-          &copy; 2026 Viral Content Factory. Built with Google Agents SDK.
+          &copy; 2026 Kre8 Copilot. Built with Google Agents SDK.
         </p>
         <div className="flex items-center gap-6">
           <a href="#" className="text-xs font-bold text-gray-400 hover:text-indigo-600 transition-colors">Documentation</a>

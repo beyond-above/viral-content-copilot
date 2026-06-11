@@ -14,7 +14,7 @@ interface ChatProps {
 
 const Chat: React.FC<ChatProps> = ({ onTriggerProject, onJobStarted }) => {
   const [messages, setMessages] = useState<Message[]>([
-    { role: 'assistant', content: "Hello! I'm your Viral Content Copilot. Ready to create some trending content? What's the main keyword or topic you'd like to explore today?" }
+    { role: 'assistant', content: "Hello! I'm your Kre8 Copilot. Ready to create some trending content? What's the main keyword or topic you'd like to explore today?" }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -223,7 +223,7 @@ const Chat: React.FC<ChatProps> = ({ onTriggerProject, onJobStarted }) => {
           <div className="flex justify-start">
             <div className="flex items-center gap-3 bg-white p-4 rounded-2xl shadow-sm border border-gray-100 rounded-tl-none">
               <Loader2 className="animate-spin text-indigo-600" size={20} />
-              <span className="text-sm text-gray-500">Generating viral magic...</span>
+              <span className="text-sm text-gray-500">Generating creative magic...</span>
             </div>
           </div>
         )}

@@ -411,7 +411,7 @@ const VideoPreview: React.FC<VideoPreviewProps> = ({
             <div className="max-w-sm">
               <h3 className="text-sm font-bold text-gray-900">Create Video Instantly</h3>
               <p className="text-xs text-gray-400 mt-2 leading-relaxed">
-                Refine a prompt in the viral copilot chat, or enter a topic below to generate vertical reels, custom AI narration, and crossfaded scenes.
+                Refine a prompt in the Kre8 Copilot chat, or enter a topic below to generate vertical reels, custom AI narration, and crossfaded scenes.
               </p>
             </div>
             <div className="w-full max-w-sm flex items-center gap-2 bg-gray-50 p-1.5 rounded-xl border border-gray-200">
@@ -542,7 +542,7 @@ const VideoPreview: React.FC<VideoPreviewProps> = ({
                 {assembledVideoUrl && (
                   <a
                     href={assembledVideoUrl}
-                    download="viral_video_reel.webm"
+                    download="kre8_video_reel.webm"
                     className="p-2 bg-emerald-500 hover:bg-emerald-600 rounded-xl text-white transition-all shadow-md shadow-emerald-500/10 border border-emerald-400/20 flex items-center gap-1.5 text-xs font-bold"
                   >
                     <Download size={14} />
